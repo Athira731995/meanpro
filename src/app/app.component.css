@@ -1,4 +1,5 @@
-.example-container {
+/* .example-container {
+
     width: 500px;
     height: 300px;
     border: 1px solid rgba(0, 0, 0, 0.5);
@@ -13,5 +14,19 @@
   
   .example-sidenav {
     padding: 20px;
+  }*/
+ .example-h2 {
+    margin: 10px;
+  } 
+  @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 10px;
   }
   
