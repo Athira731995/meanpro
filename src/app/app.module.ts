@@ -50,14 +50,18 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 // import {MatCheckboxModule} from '@angular/material/checkbox'
-import {FormsModule} from '@angular/forms'
+import {FormsModule} from '@angular/forms';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

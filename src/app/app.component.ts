@@ -16,11 +16,21 @@ export class AppComponent {
   color: ThemePalette = 'accent';
   checked = false;
   disabled = false;
+  picker1:any
   test(){
     console.log(this.checked)
+    console.log(this.picker1)
+
   }
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
+
+  myFilter = (d: Date | null): boolean => {
+    const day = (d || new Date()).getDay();
+    // Prevent Saturday and Sunday from being selected.
+    return day !== 0 && day !== 6;
+  }
+
 }
