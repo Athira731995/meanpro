@@ -52,7 +52,8 @@ import {OverlayModule} from '@angular/cdk/overlay';
 // import {MatCheckboxModule} from '@angular/material/checkbox'
 import {FormsModule} from '@angular/forms';
 import { ParentComponent } from './parent/parent.component';
-import { ChildComponent } from './child/child.component'
+import { ChildComponent } from './child/child.component';
+import { TesthooksComponent } from './testhooks/testhooks.component'
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ChildComponent } from './child/child.component'
     HomeComponent,
     AboutComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    TesthooksComponent
   ],
   imports: [
     BrowserModule,
