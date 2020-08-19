@@ -53,7 +53,9 @@ import {OverlayModule} from '@angular/cdk/overlay';
 import {FormsModule} from '@angular/forms';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
-import { TesthooksComponent } from './testhooks/testhooks.component'
+import { TesthooksComponent } from './testhooks/testhooks.component';
+import { EmployeeComponent } from './employee/employee.component'
+import {NgxPaginationModule} from 'ngx-pagination'
 
 @NgModule({
   declarations: [
@@ -63,10 +65,12 @@ import { TesthooksComponent } from './testhooks/testhooks.component'
     AboutComponent,
     ParentComponent,
     ChildComponent,
-    TesthooksComponent
+    TesthooksComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
+    NgxPaginationModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,

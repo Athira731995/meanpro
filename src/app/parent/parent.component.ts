@@ -6,15 +6,29 @@ import { ChildComponent } from '../child/child.component';
   template:`
   <p>This is Parent Component</p>
   <h1>Child's Message</h1>
+  <input type="text" (input)="parentMessage=$event.target.value" >
   {{data}}
  Message through child event {{emessage}}
-  <app-child [childMessage]="parentMessage" (messageEvent)="receiveEvent($event)"></app-child>
+  <app-child [childMessage]="parentMessage" ></app-child>
   `
 })
-export class ParentComponent implements OnInit,AfterViewInit{
+export class ParentComponent implements OnChanges,OnInit{
+
+  ngOnChanges(changes:SimpleChanges){
+    for (const propName in changes) {
+      const chng = changes[propName];
+      const cur  = JSON.stringify(chng.currentValue);
+      const prev = JSON.stringify(chng.previousValue);
+      this.changeLog.push(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
+    
+    }
+
+  }
+  changeLog:any[]=[]
 
 
-  @ViewChild(ChildComponent)child;
+
+  // @ViewChild(ChildComponent)child;
 
   constructor() { }
   
@@ -25,17 +39,19 @@ export class ParentComponent implements OnInit,AfterViewInit{
   ngOnInit(): void {
     console.log("after init")
   }
-  ngAfterViewInit(){
-    this.data=this.child.message
-    console.log("child")
+  // ngAfterViewInit(){
+  //   // renderWidgetInsideWidgetContainer();
+  //   this.data=this.child.message
+  //   console.log("child")
 
-  }
+  // }
 //this is  done by using output and event emitter
-emessage:string
-  receiveEvent($event){
-    this.emessage=$event
+// emessage:string
+//   receiveEvent($event){
+//     this.emessage=$event
+//     this.parentMessage=$event
 
-  }
+//   }
 
 
 }
